@@ -112,6 +112,23 @@ ruleTester.run('forbid-dom-props', rule, {
         },
       ],
     },
+    {
+      code: `
+        const First = (props) => (
+          <span otherProp="bar" />
+        );
+      `,
+      options: [
+        {
+          forbid: [
+            {
+              propName: 'otherProp',
+              allowedFor: ['span'],
+            },
+          ],
+        },
+      ],
+    },
   ]),
 
   invalid: parsers.all([
