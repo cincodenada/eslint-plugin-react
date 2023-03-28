@@ -45,12 +45,22 @@ Examples of **correct** code for this rule:
 
 An array specifying the names of props that are forbidden. The default value of this option is `['className', 'style']`.
 Each array element can either be a string with the property name or object specifying the property name, an optional
-custom message, and a component allowlist:
+custom message, and either a component allowlist or disallowlist:
 
 ```js
 {
   "propName": "someProp",
   "allowedFor": [SomeComponent, AnotherComponent],
+  "message": "Avoid using someProp"
+}
+```
+
+or
+
+```js
+{
+  "propName": "someProp",
+  "disallowedFor": [SomeComponent, AnotherComponent],
   "message": "Avoid using someProp"
 }
 ```

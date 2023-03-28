@@ -46,7 +46,17 @@ Examples of **correct** code for this rule:
 
 An array of strings, with the names of props that are forbidden. The default value of this option `[]`.
 Each array element can either be a string with the property name or object specifying the property name, an optional
-custom message, and a DOM nodes disallowed list (e.g. `<div />`):
+custom message, and either a DOM nodes allowed or disallowed list (e.g. `div`):
+
+```js
+{
+  "propName": "someProp",
+  "allowedFor": ["DOMNode", "AnotherDOMNode"],
+  "message": "Avoid using someProp"
+}
+```
+
+or
 
 ```js
 {
